@@ -15,6 +15,12 @@ app.use(express.json());
 // This is to allow our api for cross-origin resource sharing
 app.use(cors());
 
+//Import Routes
+const signUpRouter = require ('./Routes/SignUpRoute');
+
+//Routes Middleware
+app.use ('/SignUp', signUpRouter);
+
 // Connect to MongoDB Atlas database
 mongoose.connect(ATLAS_URI, {
     useNewUrlParser: true
